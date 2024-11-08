@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <title>Student Enrollment Form</title>
+  <style>
+    .status-passed { color: green; font-weight: bold; }
+    .status-failed { color: red; font-weight: bold; }
+  </style>
 </head>
 <body>
 
@@ -48,5 +52,27 @@
       </div>
       <button type="submit" class="btn btn-primary w-10">Submit Student Information</button>
     </form>
+
+
+    <div class="grade-form w-100 w-md-75 w-lg-50" id="gradeForm" style="display: none;">
+      <h5>Enter Grades for: <span id="studentName"></span></h5>
+
+      <form id="gradesForm" action="#" method="post" onsubmit="submitGrades(event)">
+        <div class="mb-3">
+          <label for="prelim">Prelim</label>
+          <input type="number" id="prelim" name="prelim" class="form-control" required min="0" max="100">
+        </div>
+        <div class="mb-3">
+          <label for="midterm">Midterm</label>
+          <input type="number" id="midterm" name="midterm" class="form-control" required min="0" max="100">
+        </div>
+        <div class="mb-3">
+          <label for="finals">Finals</label>
+          <input type="number" id="finals" name="finals" class="form-control" required min="0" max="100">
+        </div>
+        <button type="submit" class="btn btn-primary w-10">Submit Grades</button>
+      </form>
+    </div>
+
 </body>
 </html>
